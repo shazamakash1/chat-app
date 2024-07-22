@@ -8,8 +8,8 @@ const Conversation = ({ conversation, lastIdx, emoji }) => {
   const { onlineUsers } = useSocketContext();
   const isOnline = onlineUsers.includes(conversation._id);
 
-  console.log(`selectedConversation ->${selectedConversation}`);
-  console.log(`conversation ->${conversation}`);
+  // console.log(`selectedConversation ->${selectedConversation}`);
+  // console.log(`conversation ->${conversation}`);
 
   return (
     <>

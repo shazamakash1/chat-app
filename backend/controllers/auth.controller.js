@@ -6,7 +6,6 @@ export const signup = async (req, res) => {
   try {
     const { fullname, username, password, confirmpassword, gender } = req.body;
 
-    console.log(`password->${password}, confirmpassword->${confirmpassword}`);
 
     if (password !== confirmpassword) {
       return res.status(400).json({ error: "Passwords don't match" });
@@ -50,7 +49,7 @@ export const signup = async (req, res) => {
       res.status(400).json({ error: "Invalid user data" });
     }
   } catch (error) {
-    console.log("Error in signup controller", error.message);
+    // console.log("Error in signup controller", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -60,17 +59,12 @@ export const login = async (req, res) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
 
-    console.log(`username->${username}, password->${password}`);
-
     if (!user || password.length == 0) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
     const isPasswordCorrect = await bcrypt.compare(password, user?.password);
 
-    console.log(
-      `password->${password}, isPasswordCorrect->${isPasswordCorrect}`
-    );
 
     if (!user || !isPasswordCorrect) {
       return res.status(400).json({ error: "Invalid username or password" });
@@ -85,7 +79,7 @@ export const login = async (req, res) => {
       profilepic: user.profilepic,
     });
   } catch (error) {
-    console.log("Error in login controller", error.message);
+    // console.log("Error in login controller", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };

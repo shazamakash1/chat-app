@@ -51,13 +51,13 @@ const useSigup = () => {
       }
 
       //set the use to localstorage
-        console.log(data);
+        // console.log(data);
 
       localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthUser(data);
       
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(error.message);
     } finally {
       setLoading(false);

@@ -9,7 +9,6 @@ const useLogin = () => {
     const success = handleInputErrors(username, password);
     if (!success) return;
 
-    console.log(`username->${username}, password->${password}`);
     
     setLoading(true);
     try {

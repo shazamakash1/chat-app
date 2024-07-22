@@ -19,7 +19,7 @@ const SearchInput = () => {
         conversation.fullname.toLowerCase() === search.toLowerCase()
     );
 
-    console.log(conversation);
+    // console.log(conversation);
     if (!conversation) {
       return toast.error("Conversation not found");
     }

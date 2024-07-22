@@ -20,16 +20,16 @@ const useSendMessage = () => {
         }
       );
 
-      console.log("res->", res);
+      // console.log("res->", res);
       const data = await res.json();
-      console.log("data->", data);
+      // console.log("data->", data);
       if (data.error) {
         throw new Error(data.error);
       }
       setMessages([...messages, data]);
     } catch (error) {
       toast.error(error.message);
-      console.log("error in useSendMessage->", error);
+      // console.log("error in useSendMessage->", error);
     } finally {
       setLoading(false);
     }
