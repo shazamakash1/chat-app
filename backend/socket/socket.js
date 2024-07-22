@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5000"], // Replace with your frontend URL
+    origin: ["https://chat-app-klpj.onrender.com/"], // Replace with your frontend URL
     methods: ["GET", "POST"],
   },
 });
